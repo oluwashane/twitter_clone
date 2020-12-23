@@ -1,0 +1,138 @@
+/* sidebar style */
+
+.sidebar_menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar_menu_items {
+  padding: 10px 0;
+  flex-grow: 1;
+}
+
+.logo > #sidebar_icon {
+  font-size: 28px;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sidebar_menu_value {
+  padding: 10px 10px;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  display: grid;
+  grid-template-columns: 20px 30px;
+  text-decoration: none;
+  gap: 20px;
+}
+
+.sidebar_list {
+  list-style: none;
+  padding: 0 10px;
+}
+
+/* popUp section */
+.more_popup {
+  position: absolute;
+  top: 230px;
+  left: 0;
+  display: inline;
+}
+
+.hide_popup {
+  display: none;
+}
+
+
+.tweet > button {
+  border: none;
+  border-radius: 50px;
+  padding: 15px 90px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tweet > button:hover {
+  background-color: #177ab8;
+}
+
+.active {
+  color: #1da1f2;
+}
+
+/* user_profile */
+.user_profile {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 20px;
+  padding: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.user_profile:hover {
+  background-color: #1da0f21c;
+  border-radius: 40px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.avatar > img {
+  width: 100%;
+  height: 40px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.data > .name  {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.data > .username  {
+  color: #73838f;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1290px) {
+  .menu_value {
+    display: none;
+  }
+
+  .tweet > button {
+    display: none;
+  }
+
+  .icon > i  {
+    font-size: 25px;
+  }
+
+  .content {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 652px) {
+  .sidebar_menu_value {
+    margin-bottom: 19px;
+    text-align: justify;
+    padding: 12px 10px;
+    width: 40px;
+  }
+}

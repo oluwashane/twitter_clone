@@ -1,0 +1,35 @@
+.lightTheme {
+  .twitterBackground {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .twitterTrends {
+    background-color: #f7f9fa;
+    color: #000000;
+  }
+  
+  .twitterSidebar {
+    color: #000000;
+    a {
+      color: #000000;
+    }
+  }
+  
+  .mini_layer_menu {
+    li {
+      &:hover {
+        background-color: #f7f9fa;
+      }
+    }
+  }
+  
+  .setting {
+    background: #f7f9fa;
+  }
+  
+  .feedBorder {
+    border: 1px solid #ebeef0;
+  }
+}
+

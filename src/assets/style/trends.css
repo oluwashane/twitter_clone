@@ -1,0 +1,69 @@
+/* .trend {
+} */
+
+.trend_body {
+  padding: 10px 5px;
+}
+
+
+#input_container {
+  top: 0;
+  padding: 10px 0;
+  color:  #8899a6;
+  position: relative;
+}
+
+#input_container > i{
+  position: absolute;
+  top: 23px;
+  left: 20px;
+}
+
+#input_container > input {
+  padding-left: 40px;
+}
+
+#search::placeholder {
+  padding-left: 10px;
+  font-size: 14px;
+  color:  #8899a6
+}
+
+
+
+.trend_search_box #search {
+  width: 88%;
+  height: 40px;
+  border: none;
+  border-radius: 40px;
+}
+
+.trend_showcase {
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.trend_showcase_heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: -20px;
+}
+
+.trend_showcase_heading h2 {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.fa-cog {
+  font-size: 20px;
+}
+
+.layout_text {
+  padding: 5px 15px;
+}
+
+.trend_showcase_bottom {
+  padding: 5px 15px;
+  cursor: pointer;
+}

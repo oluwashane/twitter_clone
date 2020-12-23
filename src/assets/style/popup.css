@@ -1,0 +1,25 @@
+.mini_layer_menu {
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 12px
+}
+
+.mini_layer_list {
+  padding: 0;
+}
+
+.mini_layer_menu li {
+  cursor: pointer;
+  padding: 0 20px;
+}
+.display {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.display p {
+  margin-left: 10px;
+}
+
+.mini_layer_menu li:hover {
+  background-color: #1f2f3f;
+}

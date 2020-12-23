@@ -1,0 +1,36 @@
+html {
+  --primaryTextColor: black;
+  --primaryBackgroundColor: white;
+  --headingTextColor: #14ad8c;
+  --secondaryBackgroundColor: #C3423F;
+}
+
+html.dark {
+  --primaryBackgroundColor: black;
+  --primaryTextColor: white;
+}
+
+.TextCard {
+  background: var(--primaryBackgroundColor);
+  color: var(--primaryTextColor);
+
+  margin: 10px auto;
+  width: 50%;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+body {
+  background: var(--secondaryBackgroundColor);
+}
+
+.heading h1 {
+  color: var(--headingTextColor);
+}
+
+@media(prefers-color-scheme: dark) {
+  html {
+    --primaryTextColor: white;
+    --primaryBackgroundColor: black
+  }
+}

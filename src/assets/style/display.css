@@ -1,0 +1,66 @@
+.displaySetting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  border-radius: 20px;
+  overflow-y: auto;
+  padding: 20px;
+  width: 35%;
+  margin: auto;
+}
+
+.display_header {
+  text-align: center;
+}
+
+.background_sec p{
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.background_sec .theme_section {
+  border-radius: 20px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}
+
+.theme_box {
+  font-size: 16px;
+  text-align: center;
+  padding: 20px 5px;
+}
+
+.default {
+  background:#fff;
+  color: #000;
+}
+
+.dim {
+  background: #15202b;
+  color: #fff;
+}
+
+.dark {
+  background: #000;
+  color: #fff;
+}
+
+.btn_parent{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn_parent button {
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+}
