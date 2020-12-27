@@ -10,10 +10,6 @@
   object-position: center;
 }
 
-/* .user_profile_page {
-  border: 1px solid #566470;
-} */
-
 .user_detail {
   padding: 0 15px;
   position: relative;
@@ -23,21 +19,20 @@
   position: absolute;
   top: -60px;
   border-radius: 120px;
-  height: 120px;
-  width: 120px;
-  border: 3px solid #15202b;
+  height: 100px;
+  width: 100px;
   overflow: hidden;
   z-index: 99;
 }
 
 .profile_pic img {
   width: 100%;
-  height: 120px;
+  height: 100px;
   object-fit: cover;
 }
 
 .user_text {
-  padding-top: 70px;
+  padding-top: 50px;
 }
 
 .personal_data  > .name{
@@ -47,7 +42,7 @@
 
 .personal_data  > .username {
   font-size: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   color: #566470;
 }
 
@@ -58,7 +53,7 @@
 
 .user_text .follow_section {
   display: flex;
-  margin-top: -10px;
+  margin-top: 10px;
   width: 300px;
 }
 
@@ -76,19 +71,17 @@
   align-items: center;
   list-style: none;
   margin-bottom: 0;
+  margin-top: 10px;
   margin-left: -50px;
 }
 
 .profile_navigation ul li {
-  padding: 15px 5px;
+  padding: 15px 2px;
   font-weight: 600;
   width: 100%;
-}
-
-.profile_navigation ul li a {
-  color: #566470;
   text-align: center;
-  font-size: 15px;
+  font-size: 14px;
+  color: #566470;
 }
 
 .profile_navigation .active {
@@ -97,4 +90,19 @@
 
 .profile_navigation ul li:hover {
   background: #1da0f21c;
+}
+
+
+@media screen and (max-width: 652px) {
+  
+}
+
+@media screen and (max-width: 450px) {  
+
+  .profile_navigation ul li {
+    color: #566470;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+  }
 }

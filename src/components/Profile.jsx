@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Header from './Header';  
 import Trends from './Trends';
@@ -37,10 +36,9 @@ const Profile = () => {
                           </div>
                         </div>
                         <div className="bio">
-
                           <p>Software developer by day learner by night</p>
                           <p className="joined">
-                            <i class="far fa-calendar-alt"></i>  Joined  January  2018
+                            <i className="far fa-calendar-alt"></i>  Joined  January  2018
                           </p>
                           
                           <div className="follow_section">
@@ -48,29 +46,20 @@ const Profile = () => {
                           <p className="follower">200 <span>Follower</span></p>
                           </div>
                         </div>
-                        
                       </div>
                       <div className="profile_navigation">
                         <ul>
                           <li>
-                            <Link>
-                              <div class="active">Tweets</div>
-                            </Link>
+                              <div className="active">Tweets</div>
                           </li>
                           <li>
-                            <Link>
                               <div>Tweets & replies</div>
-                            </Link>
                           </li>
                           <li>
-                            <Link>
                               <div>Media</div>
-                            </Link>
                           </li>
                           <li>
-                            <Link>
                               <div>Likes</div>
-                            </Link>
                           </li>
                         </ul>
                       </div>
