@@ -20,7 +20,7 @@ a {
 }
 
 .sidebar_menu_value {
-  padding: 10px 10px;
+  padding: 5px 20px;
   font-size: 20px;
   font-weight: 700;
   text-transform: capitalize;
@@ -73,7 +73,7 @@ a {
   padding: 10px;
   margin: 0 10px;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .user_profile:hover {

@@ -12,10 +12,12 @@ const PopUp = () => {
       <div className="mini_layer_menu">
       <ul className="sidebar_list mini_layer_list">
         <li>
-          <div className="display">
-              <i className="fas fa-cog _icons"></i>
-              <p>setting & privacy</p>
-          </div>
+          <Link to="/setting">
+            <div className="display">
+                <i className="fas fa-cog _icons"></i>
+                <p>setting & privacy</p>
+            </div>
+          </Link>
         </li>
         <li>
           <div className="display">

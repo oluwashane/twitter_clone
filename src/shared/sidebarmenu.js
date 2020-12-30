@@ -82,7 +82,7 @@ export const smallScreen = {
     {
       id: 1,
       name: "setting and privacy",
-      path: "settings",
+      path: "setting",
       icon: "fas fa-cog"
     },
     {
