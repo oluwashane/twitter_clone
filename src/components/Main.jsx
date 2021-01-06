@@ -3,6 +3,7 @@ import { Switch, Redirect, Route } from 'react-router-dom';
 import Home from './Home';
 import Profile from './Profile';
 import Setting from './Setting';
+import Message from './Message';
 import '../assets/style/dark.scss';
 import '../assets/style/default.scss';
 import '../assets/style/dim.scss';
@@ -36,6 +37,7 @@ const Main = () => {
       <Switch>
         <Route exact path="/profile" component={Profile}/>
         <Route exact path="/setting" component={Setting}/>
+        <Route exact path="/message" component={Message} />
         <Route exact path="/display" component={() => <Display darkTheme={dark} dimTheme={dim} lightTheme={light}/>} />
         <Route exact path="/" component={Home} />
         <Redirect to="/" />

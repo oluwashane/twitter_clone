@@ -14,7 +14,7 @@ export const sidebar_menu_items = [
   {
     id: 3,
     name: "messages",
-    path: "/messages",
+    path: "/message",
     icon: "far fa-envelope"
   },
   {

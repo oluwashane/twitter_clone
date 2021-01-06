@@ -1,0 +1,84 @@
+.message_head {
+  position: sticky;
+  justify-content: space-between;
+  .fa-envelope {
+    font-size: 20px;
+  }
+}
+
+.message_sent_users {
+  overflow-y: auto;
+}
+
+.search_bar {
+  border: none;
+  margin: 10px 0;
+  padding: 15px;
+  width: 100%;
+  border-radius: 50px;
+  font-size: 16px;
+}
+
+.search_bar:focus{
+  // outline: none;
+  outline-style: auto;
+}
+
+.search_bar::placeholder {
+  font-size: 16px;
+  // padding: 20px;
+}
+
+.message_area {
+  display: flex;
+  height: 80px;
+  padding: 0 0;
+
+  .user_profile {
+    justify-items: center;
+    img {
+      height: 55px;
+      width: 55px;
+      border-radius: 55px;
+    }
+  }
+
+  .user_message {
+    width: 100%;
+    margin-left: -20px;
+    
+  }
+
+  .user_name {
+    display: flex;
+    align-items: center;
+    span {
+      margin-left: 10px;
+    }
+  }
+  .message_summary {
+    margin-top: -25px;
+  }
+}
+
+.message_send {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  p {
+    font-size: 16px;
+    margin-top: -12px;
+  }
+
+  button {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+  }
+}
+
