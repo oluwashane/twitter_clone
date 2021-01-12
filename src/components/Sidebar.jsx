@@ -1,8 +1,9 @@
 import React, {useState, useEffect, useRef} from 'react';
 import { Link } from 'react-router-dom';
+import TweetButton from './TweetButton';
 import { sidebar_menu_items } from '../shared/sidebarmenu';
 import profile_picture from  '../assets/images/profilePic.jpg';
-import '../assets/style/sidebar.css'
+import '../assets/style/sidebar.css';
 import PopUp from './Pop_up';
 
 function useClickOutside(handler) {
@@ -95,6 +96,10 @@ const Sidebar = () => {
 
         <div className="tweet">
           <button>tweet</button>
+        </div>
+
+        <div className="tweet_tablet">
+          <TweetButton size="50" />
         </div>
       </div>
 

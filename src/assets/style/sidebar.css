@@ -15,6 +15,10 @@
   padding: 0 20px;
 }
 
+.tweet_tablet {
+  display: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -119,8 +123,18 @@ a {
     display: none;
   }
 
+  .logo {
+    margin-left: 9px;
+  }
+
   .icon > i  {
     font-size: 25px;
+    margin-left: 10px;
+  }
+
+  .tweet_tablet {
+    display: inline-block;
+    margin-left: 15px;
   }
 
   .content {
@@ -134,5 +148,10 @@ a {
     text-align: justify;
     padding: 12px 10px;
     width: 40px;
+  }
+
+  .tweet_tablet {
+    display: inline-block;
+    margin-left: 10px;
   }
 }

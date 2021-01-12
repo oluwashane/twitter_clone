@@ -1,0 +1,142 @@
+.tweet_page {
+  background: black;
+  position: absolute;
+  padding: 50px 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.tweet_modal {
+  width: 500px;
+  height: 250px;
+  border-radius: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet_modal .tweet_modal_header {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.tweet_modal .tweet_modal_body {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+}
+
+.tweet_modal .tweet_modal_body .tweet_user_profile {
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.tweet_modal .tweet_modal_body .tweet_user_profile img {
+  width: 100%;
+  height: 50px;
+}
+
+.tweet_modal .tweet_modal_body .tweet_form .f{
+  width: 399px;
+  height: 120px;
+  padding: 0 10px;
+  font-size: 18px;
+  caret-color: #fff;
+  border: none;
+}
+
+.f::-webkit-input-placeholder {
+  font-size: 18px;
+}
+
+.tweet_modal .tweet_modal_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-left: 100px;
+}
+
+.tweet_icons {
+  margin-right: 10px;
+}
+
+.tweet_icons i {
+  color: #1da1f2;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.btn button {
+  padding: 8px 12px;
+  border-radius: 50px;
+  font-weight: 1000;
+  border: none;
+}
+
+/* mobile */
+@media screen and (max-width: 1290px) {
+  .tweet_page {
+    background: black;
+    position: absolute;
+    padding: 50px 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .tweet_page {
+    background: pink;
+  }
+}
+
+@media screen and (max-width: 892px) {
+  .tweet_page {
+    background: yellow;
+  }
+}
+
+@media screen and (max-width: 652px) {
+  .tweet_page {
+    background: blue;
+    height: 0;
+  }
+
+  .tweet_modal {
+    width: 100%;
+    border-radius: 0px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    position: absolute;
+  }
+
+  .mob_tweet {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 450px) {  
+  .tweet_page {
+    background: red;
+  }
+  .tweet_modal .tweet_modal_body .tweet_form .f{
+    width: 90%;
+    caret-color: #fff;
+    border: none;
+  }
+}
+

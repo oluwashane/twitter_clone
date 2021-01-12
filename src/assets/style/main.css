@@ -44,7 +44,8 @@ body {
 }
 
 .container .sidebar_menu {
-  height: 98vh;
+  min-height: 100vh;
+  margin-right: 50px;
   position: fixed;
 }
 
@@ -81,6 +82,13 @@ button {
 
 ._icons {
   color: #8899a6;
+}
+
+.tw {
+  visibility: hidden;
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
 }
 
 /* Responsive Screens */
@@ -132,4 +140,9 @@ button {
     ;
     gap: 0;
   }
+
+  .tw {
+    visibility: visible;
+  }
 }
+
