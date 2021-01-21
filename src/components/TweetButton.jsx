@@ -9,7 +9,7 @@ export default function TweetButton(prop) {
         height: `${size}px`,
         borderRadius: `${size}px`
       }}>
-        <i class="fas fa-feather"></i>
+        <i className="fas fa-feather"></i>
       </div>
     )
   }

@@ -10,24 +10,40 @@ import '../assets/style/default.scss';
 import '../assets/style/dim.scss';
 import Display from './Display';
 import TweetButton from './TweetButton';
+import db from '../db/TweetDB';
 
 
 
 const Main = () => {
   const requestTheme = window.localStorage.getItem("currentTheme");
   
+  const [tweet, setTweet] = useState([])
   const [theme, setTheme] = useState(requestTheme === null ? 'lightTheme' : requestTheme);
 
   useEffect(() => {
-    window.localStorage.setItem("currentTheme", theme)
+    window.localStorage.setItem("currentTheme", theme);
+    console.log(theme)
   }, [theme])
 
+  
+
+  useEffect(() => {
+    // handle db 
+    db.table('userTweets')
+    .toArray()
+    .then((tweets) => {
+        setTweet([...tweets])
+    });
+
+  },[])
+
+  // db.table('userTweets');
+  
   function light() {
     setTheme('lightTheme')
   }
   
   function dark() {
-    console.log("darktheme")
     setTheme('darkTheme')
   }
 
@@ -35,14 +51,27 @@ const Main = () => {
     setTheme('dimTheme')
   }
 
-  
+  function addTweet(args) {
+    db.table("userTweets").add(args).then((id) => {
+      const newList = [...tweet, Object.assign({}, args, {id})]
+      setTweet(newList);
+    })
+    .catch(e => console.log(e))
+  }
+
+  function deleteTweet() {
+    
+  }
+
+  console.log(tweet)
+
   return (
     <div className={theme}>
       <Switch>
-        <Route exact path="/profile" component={Profile}/>
+        <Route exact path="/profile" component={() => <Profile userTweets={tweet} />}/>
         <Route exact path="/setting" component={Setting}/>
         <Route exact path="/message" component={Message} />
-        <Route exact path="/tweet" component={TweetPage} />
+        <Route exact path="/tweet" component={() => <TweetPage postNewTweet={addTweet} />} />
         <Route exact path="/display" component={() => <Display darkTheme={dark} dimTheme={dim} lightTheme={light}/>} />
         <Route exact path="/" component={Home} />
         <Redirect to="/" />

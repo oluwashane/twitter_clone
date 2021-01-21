@@ -95,7 +95,9 @@ const Sidebar = () => {
         </ul>
 
         <div className="tweet">
-          <button>tweet</button>
+          <Link to="/tweet">
+            <button>tweet</button>
+          </Link>
         </div>
 
         <div className="tweet_tablet">

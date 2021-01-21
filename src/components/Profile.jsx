@@ -5,7 +5,9 @@ import '../assets/style/profile.css';
 import coverPic from '../assets/images/coverPic.jpg';
 import profilePic from '../assets/images/profilePic.jpg';
 
-const Profile = () => {
+const Profile = ({ userTweets }) => {
+  console.log(userTweets)
+
   return (
     <div className="twitterBackground">
       <div className="container">
@@ -64,6 +66,33 @@ const Profile = () => {
                         </ul>
                       </div>
                     </div>
+                </div>
+                <div className="mainTweet">
+                  {userTweets.map(tweet => (
+                    <div className="feed feedBorder" key={tweet.id}>
+                    <div className="feed_avatar">
+                      <div className="avatar">
+                        <img src={profilePic} alt=""/>
+                      </div>
+                    </div>
+
+                    <div className="feed_main">
+                      <div className="feed_user">
+                        <span className="name">Sarah Palmer</span> 
+                        <span className="username">@sarah</span>
+                        </div>
+                      <div className="feed_text">
+                        {tweet.message}
+                      </div>
+
+                      <div className="feed_icons">
+                        <i className="far fa-comment linkIcon"> {tweet.comment}</i>
+                        <i className="fas fa-retweet retweet"> {tweet.retweet}</i>
+                        <i className="far fa-heart like"> {tweet.like}</i>
+                      </div>
+                    </div>
+                  </div>
+                  ))}
                 </div>
               </div>
             </div>

@@ -52,7 +52,7 @@ a {
 }
 
 
-.tweet > button {
+.tweet > a button {
   border: none;
   border-radius: 50px;
   padding: 15px 90px;
@@ -61,7 +61,7 @@ a {
   font-weight: 700;
 }
 
-.tweet > button:hover {
+.tweet > a button:hover {
   background-color: #177ab8;
 }
 
@@ -119,7 +119,7 @@ a {
     display: none;
   }
 
-  .tweet > button {
+  .tweet > a button {
     display: none;
   }
 

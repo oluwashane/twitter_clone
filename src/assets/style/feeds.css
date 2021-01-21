@@ -30,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 280px;
   font-weight: 100;
   cursor: pointer;
   color: #73838f;
@@ -42,8 +42,22 @@
   border-radius: 50px;
 }
 
+
+
+@media screen and (max-width: 892px) {
+  .feed_icons {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 652px) {
+  .feed_icons {
+    width: 250px;
+  }
+}
+
 @media screen and (max-width: 450px) {  
-  /* .feed {
-    width: 50px;
-  } */
+  .feed_icons {
+    width: 200px;
+  }
 }
