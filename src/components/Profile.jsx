@@ -68,7 +68,7 @@ const Profile = ({ userTweets }) => {
                     </div>
                 </div>
                 <div className="mainTweet">
-                  {userTweets.map(tweet => (
+                  {userTweets.reverse().map(tweet => (
                     <div className="feed feedBorder" key={tweet.id}>
                     <div className="feed_avatar">
                       <div className="avatar">

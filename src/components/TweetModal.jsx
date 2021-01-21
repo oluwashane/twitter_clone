@@ -75,6 +75,7 @@ export const TweetPage = ({ postNewTweet }) => {
           <div className="tweet_form">
             <form onSubmit={handleOnSubmit}>
               <textarea name="message" id="" cols="30" rows="10" onChange={handleOnChange} value={tweet.message} className="f twitterBackground" placeholder="What's happening?"></textarea>
+              
               <div className="tweet_modal_bottom mob_border_top">
 
                 <div className="tweet_icons">
