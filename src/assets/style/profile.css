@@ -22,7 +22,7 @@
   height: 100px;
   width: 100px;
   overflow: hidden;
-  z-index: 99;
+  z-index: 90;
 }
 
 .profile_pic img {
@@ -90,6 +90,26 @@
 
 .profile_navigation ul li:hover {
   background: #1da0f21c;
+}
+
+/* three dot */
+.dotParent {
+  /* position: relative; */
+}
+
+.dotParent .menu_list {
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  z-index: 100;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: inline;
 }
 
 

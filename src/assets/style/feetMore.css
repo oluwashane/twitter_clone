@@ -1,0 +1,24 @@
+
+
+.feedOption {
+  width: 200px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.feedOption li {
+  display: block;
+  text-decoration: none;
+  font-size: 13px;
+  color: #818181;
+  display: block;
+  padding: 10px;
+}
+
+.feedOption a:hover {
+  background-color: #e9e9e9;
+}
+
+.feedOption .delete {
+  color: rgb(235, 81, 61);
+}
+

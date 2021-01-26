@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
+import moment from 'moment';
 import {useHistory} from 'react-router-dom';
 import profileImage from '../assets/images/profilePic.jpg';
 import '../assets/style/tweetmodal.css';
@@ -46,7 +47,9 @@ export const TweetPage = ({ postNewTweet }) => {
   function handleOnSubmit(e) {
     if (tweet.message !== '') {
       setTweet(resetState)
-      postNewTweet(tweet)
+      const now = moment().format("MMM Do")
+      const data = Object.assign({}, tweet, {date: now} )
+      postNewTweet(data)
       history.push('/profile');
     } else {
       history.push('/');
@@ -63,7 +66,7 @@ export const TweetPage = ({ postNewTweet }) => {
   
         </div>
         <div className="tweet_modal_header mob_border_bottom">
-          <i class="fas fa-times links" onClick={() => history.push('/')}></i>
+          <i className="fas fa-times links" onClick={() => history.push('/')}></i>
         </div>
 
         <div className="tweet_modal_body">
@@ -79,10 +82,10 @@ export const TweetPage = ({ postNewTweet }) => {
               <div className="tweet_modal_bottom mob_border_top">
 
                 <div className="tweet_icons">
-                  <i class="far fa-image"></i>
-                  <i class="fas fa-stream"></i>
-                  <i class="far fa-smile"></i>
-                  <i class="far fa-calendar-check"></i>
+                  <i className="far fa-image"></i>
+                  <i className="fas fa-stream"></i>
+                  <i className="far fa-smile"></i>
+                  <i className="far fa-calendar-check"></i>
                 </div>  
                 <div className="btn">
                   <button type="submit">Tweet</button>

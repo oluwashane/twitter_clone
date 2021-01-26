@@ -1,0 +1,21 @@
+import React from 'react';
+import '../assets/style/feetMore.css';
+
+const FeedMore = ({ currentId, deleteFunc}) => {
+  function clicked() {
+    deleteFunc(currentId);
+  }
+  return (
+    <div className="feedOption twitterBackground">
+
+    <li href="" className="delete" onClick={clicked}><i className="far fa-trash-alt"></i> Delete</li>
+    <li href=""><i className="fas fa-thumbtack"></i> Pinned to your profile</li>
+    <li href=""><i className="fas fa-code"></i> Embed Tweet</li>
+    <li href=""><i className="far fa-chart-bar"></i> View Tweet activity</li>
+
+    
+    </div>
+  )
+}
+
+export default FeedMore

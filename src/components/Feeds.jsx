@@ -15,10 +15,15 @@ const Feeds = () => {
             </div>
 
             <div className="feed_main">
+
               <div className="feed_user">
-                <span className="name">{info.name}</span> 
-                <span className="username">@{info.username}</span>
+                <div className="feed_user_details">
+                  <span className="name">{info.name}</span> 
+                  <span className="username">@{info.username}</span>
                 </div>
+                <i className="fas fa-ellipsis-h dot"></i>
+              </div>
+
               <div className="feed_text">
                 {info.tweet}
               </div>

@@ -11,6 +11,7 @@ import '../assets/style/dim.scss';
 import Display from './Display';
 import TweetButton from './TweetButton';
 import db from '../db/TweetDB';
+import FeedMore from './FeedMore';
 
 
 
@@ -22,7 +23,6 @@ const Main = () => {
 
   useEffect(() => {
     window.localStorage.setItem("currentTheme", theme);
-    console.log(theme)
   }, [theme])
 
   
@@ -34,9 +34,8 @@ const Main = () => {
     .then((tweets) => {
         setTweet([...tweets])
     });
-
+    
   },[])
-
   // db.table('userTweets');
   
   function light() {
@@ -52,23 +51,23 @@ const Main = () => {
   }
 
   function addTweet(args) {
-    db.table("userTweets").add(args).then((id) => {
-      const newList = [...tweet, Object.assign({}, args, {id})]
-      setTweet(newList);
+    db.table("userTweets").add(args).then(id => {
+      setTweet([...tweet, Object.assign({}, args, { id })])
     })
     .catch(e => console.log(e))
   }
 
-  function deleteTweet() {
-    
+  function deleteTweet(id) {
+    db.table("userTweets").delete(id).then(() => {
+      const newList = tweet.filter((data) => data.id !== id);
+      setTweet(newList);
+    })
   }
-
-  console.log(tweet)
 
   return (
     <div className={theme}>
       <Switch>
-        <Route exact path="/profile" component={() => <Profile userTweets={tweet} />}/>
+        <Route exact path="/profile" component={() => <Profile newTweet={tweet} deleteTweet={deleteTweet}/>}/>
         <Route exact path="/setting" component={Setting}/>
         <Route exact path="/message" component={Message} />
         <Route exact path="/tweet" component={() => <TweetPage postNewTweet={addTweet} />} />
