@@ -12,6 +12,7 @@ import Display from './Display';
 import TweetButton from './TweetButton';
 import db from '../db/TweetDB';
 import FeedMore from './FeedMore';
+import CommentPage from './Comments';
 
 
 
@@ -66,10 +67,12 @@ const Main = () => {
 
   return (
     <div className={theme}>
+      {/* <CommentPage />  */}
       <Switch>
         <Route exact path="/profile" component={() => <Profile newTweet={tweet} deleteTweet={deleteTweet}/>}/>
         <Route exact path="/setting" component={Setting}/>
         <Route exact path="/message" component={Message} />
+        <Route exact path="/comment" component={CommentPage} />
         <Route exact path="/tweet" component={() => <TweetPage postNewTweet={addTweet} />} />
         <Route exact path="/display" component={() => <Display darkTheme={dark} dimTheme={dim} lightTheme={light}/>} />
         <Route exact path="/" component={Home} />

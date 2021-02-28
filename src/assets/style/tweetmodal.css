@@ -8,7 +8,7 @@
 
 .tweet_modal {
   width: 500px;
-  height: 250px;
+  /* height: 250px; */
   border-radius: 20px;
   margin: auto;
   display: flex;

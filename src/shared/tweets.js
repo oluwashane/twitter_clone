@@ -5,7 +5,7 @@ export const randomTweet = [
     username: "jamie jude",
     name: "jamie",
     tweet: "A great developer experience boils down to 3 key components: - Developer workflow - Security and compliance - Platform reliability",
-    likes: 16,
+    likes: 10,
     retweet: 4,
     comments: null
   },
@@ -15,7 +15,7 @@ export const randomTweet = [
     username: "coder_",
     name: "!mike andrew o",
     tweet: "I honestly don’t like unnecessary stress",
-    likes: 16,
+    likes: 2,
     retweet: 4,
     comments: null
   },
