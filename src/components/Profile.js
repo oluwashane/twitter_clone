@@ -5,10 +5,16 @@ import '../assets/style/profile.css';
 import coverPic from '../assets/images/coverPic.jpg';
 import profilePic from '../assets/images/profilePic.jpg';
 import T from './T';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchData } from '../redux'
+import loader from '../assets/svg/spinner.svg'
 
-const Profile = (props) => {
-  const { newTweet, deleteTweet } = props;
-
+const Profile = ({ load, tweets }) => {
+  useEffect(() => {
+    return load()
+  },[])
+  
   return (
     <div className="twitterBackground">
       <div className="container">
@@ -69,12 +75,13 @@ const Profile = (props) => {
                     </div>
                 </div>
                 <div className="mainTweet">
-                  {
-                    newTweet.reverse().map((tweet) => {
-                      return <T data={tweet} deleteTweet={deleteTweet}/>
-                    })
-                  }
-                  
+                  {tweets.loading ? 
+                  <div style= {{ width: '50px', margin: "auto"}} >
+                    <img src={loader} alt="img description" style={{width: "50px", margin: "10px 0"}} />
+                  </div>
+                  : <>
+                    {tweets.tweets.map(tweet => <T data={tweet} key={tweet.id}/>)}
+                  </>} 
                 </div>
               </div>
             </div>
@@ -87,4 +94,19 @@ const Profile = (props) => {
   )
 }
 
-export default Profile
+const mapStateToProps = state => {
+  return {
+    tweets: state.tweets
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    load: () => dispatch(fetchData())
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Profile)

@@ -7,7 +7,7 @@ export const randomTweet = [
     tweet: "A great developer experience boils down to 3 key components: - Developer workflow - Security and compliance - Platform reliability",
     likes: 10,
     retweet: 4,
-    comments: null
+    comments: []
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const randomTweet = [
     tweet: "I honestly don’t like unnecessary stress",
     likes: 2,
     retweet: 4,
-    comments: null
+    comments: []
   },
   {
     id: 3,

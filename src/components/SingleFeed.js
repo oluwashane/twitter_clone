@@ -27,8 +27,8 @@ const SingleFeed = (props) => {
 
         <div className="feed_icons">
           <i className="far fa-comment linkIcon" onClick={() => history.push('/comment')}> {props.info.comments}</i>
-          <i className="fas fa-retweet retweet"> {props.info.retweet}</i>
-          <i className="far fa-heart like" onClick={props.addLike}>{props.info.likes}</i>
+          <i className="fas fa-retweet retweet" onClick={() => props.addRetweet(props.info.id, props.info.retweet)} > {props.info.retweet}</i>
+          <i className="far fa-heart like" onClick={() => props.addLike(props.info.id, props.info.likes)} >{props.info.likes}</i>
         </div>
       </div>
     </div>

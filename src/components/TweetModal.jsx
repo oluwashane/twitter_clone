@@ -3,22 +3,24 @@ import moment from 'moment';
 import {useHistory} from 'react-router-dom';
 import profileImage from '../assets/images/profilePic.jpg';
 import '../assets/style/tweetmodal.css';
+import { addTweet } from '../redux';
+import { connect } from 'react-redux'
 
-export const TweetPage = ({ postNewTweet }) => {
+const TweetPage = (props) => {
   const [tweet, setTweet] = useState({
     message: '',
     image: '',
-    like: '',
+    like: null,
     comment: [],
-    retweet: ''
+    retweet: null
   });
 
   const resetState = {
     message: '',
     image: '',
-    like: '',
+    like: null,
     comment: [],
-    retweet: ''
+    retweet: null
   }
 
   const tweetModal = useRef();
@@ -49,7 +51,8 @@ export const TweetPage = ({ postNewTweet }) => {
       setTweet(resetState)
       const now = moment().format("MMM Do")
       const data = Object.assign({}, tweet, {date: now} )
-      postNewTweet(data)
+      // props.postNewTweet(data)
+      props.addTweet(data);
       history.push('/profile');
     } else {
       history.push('/');
@@ -100,3 +103,14 @@ export const TweetPage = ({ postNewTweet }) => {
     
   )
 }
+
+
+const mapDispatchToProp = dispatch => {
+  return {
+    addTweet: (data) => dispatch(addTweet(data))
+  }
+}
+
+export default connect( 
+  null,
+  mapDispatchToProp )(TweetPage)
