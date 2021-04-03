@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import profilePic from '../assets/images/profilePic.jpg';
 import FeedMore from './FeedMore';
-import { connect } from 'react-redux'
-import { addLikeProfile, addRetweetProfile } from '../redux'
-
-
+import {  useDispatch  } from 'react-redux'
+import { tweetsAction, addLikeToPost, addRetweetToPost } from '../redux/tweets/tweets.slice';
 
 function useClickOutside(handler) {
   let domNode = useRef()
@@ -32,8 +30,10 @@ const T = (props) => {
   function moreOption() {
     setMenu(!menu);
   }
-
+  console.log(tweetsAction)
   let domNode = useClickOutside(() => setMenu(false))
+
+  const dispatch = useDispatch();
 
   return (
     <div className="feed feedBoarder">
@@ -62,19 +62,12 @@ const T = (props) => {
         </div>
         <div className="feed_icons">
           <i className="far fa-comment linkIcon">{props.data.comment}</i>
-          <i className="fas fa-retweet retweet" onClick={() => props.addRetweetProfile(props.data.id, props.data.retweet)} >{props.data.retweet}</i>
-          <i className="far fa-heart like" onClick={() => props.addLikeProfile(props.data.id, props.data.like)}>{props.data.like}</i>
+          <i className="fas fa-retweet retweet" onClick={() => dispatch(addRetweetToPost({ id: props.data.id , currentRetweet: props.data.retweet}))}>{props.data.retweet}</i>
+          <i className="far fa-heart like" onClick={() => dispatch(addLikeToPost({ id: props.data.id , currentLike: props.data.like}))}>{props.data.like}</i>
         </div>
       </div>
     </div>
   )
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addLikeProfile: (id, numberOfLike) => dispatch(addLikeProfile(id, numberOfLike)),
-    addRetweetProfile: (id, numberOfLike) => dispatch(addRetweetProfile(id, numberOfLike))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(T)
+export default T

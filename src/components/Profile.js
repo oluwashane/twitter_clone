@@ -6,15 +6,23 @@ import coverPic from '../assets/images/coverPic.jpg';
 import profilePic from '../assets/images/profilePic.jpg';
 import T from './T';
 import { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { fetchData } from '../redux'
-import loader from '../assets/svg/spinner.svg'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchData } from '../redux/tweets/tweets.slice';
+import loader from '../assets/svg/spinner.svg';
 
-const Profile = ({ load, tweets }) => {
+
+const Profile = () => {
+
+  const personalTweets = useSelector(state => state)
+  const dispatch = useDispatch()
+
   useEffect(() => {
-    return load()
-  },[])
-  
+    dispatch(fetchData())
+  },[dispatch])
+
+  const { tweet } = personalTweets;
+
+  console.log(tweet)
   return (
     <div className="twitterBackground">
       <div className="container">
@@ -75,16 +83,16 @@ const Profile = ({ load, tweets }) => {
                     </div>
                 </div>
                 <div className="mainTweet">
-                  {tweets.loading ? 
+                  {tweet.loading ? 
                   <div style= {{ width: '50px', margin: "auto"}} >
                     <img src={loader} alt="img description" style={{width: "50px", margin: "10px 0"}} />
                   </div>
                   : <>
-                    {tweets.tweets.map(tweet => <T data={tweet} key={tweet.id}/>)}
+                    {tweet.tweets.map(tweet => <T data={tweet} key={tweet.id}/>)}
                   </>} 
                 </div>
-              </div>
             </div>
+              </div>
             <div className="trend_section">
               <Trends />
             </div>
@@ -94,19 +102,4 @@ const Profile = ({ load, tweets }) => {
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    tweets: state.tweets
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    load: () => dispatch(fetchData())
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Profile)
+export default Profile
